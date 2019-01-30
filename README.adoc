@@ -1,0 +1,150 @@
+:launchURL: https://developers.redhat.com/launch
+:image: registry.access.redhat.com/fuse7/fuse-java-openshift:1.0
+
+= REST API Level 0 - Fuse Booster
+
+The REST API Level 0 mission shows how to map business operations to a remote procedure call endpoint over HTTP by using a REST framework. This mission corresponds to Level 0 in the Richardson Maturity Model. 
+
+By using this Fuse booster, you can quickly prototype and flexibly design a REST API.
+
+This booster introduces the mechanics of interacting with a remote (exposed by Apache Camel) service using the HTTP protocol. 
+
+Use this booster to:
+
+* Execute an HTTP GET request on the `camel/greetings/{name}` endpoint by using the URL parameter `{name}`. The JSON-formatted response has a payload of `Hello, $name!` (where `$name` is replaced by the value of the URL parameter from the HTTP GET request).
+
+* Browse the API's Swagger page.
+                
+== Deployment options
+
+You can run this booster in the following modes:
+
+* Single-node OpenShift cluster
+* OpenShift Online at link:{launchURL}[]
+* Standalone on your machine
+
+The most effective way to use this booster is to deploy and run the project on OpenShift.
+
+For more details about running this booster on a single-node OpenShift cluster, CI/CD deployments, as well as the rest of the runtime, see the link:http://appdev.openshift.io/docs/spring-boot-runtime.html[Spring Boot Runtime Guide].
+
+IMPORTANT: This booster requires Java 8 JDK or later and Maven 3.3.x or later.
+
+
+== Running the booster on a single-node OpenShift cluster
+
+A single-node OpenShift cluster provides you with access to a cloud environment that is similar to a production environment.
+
+If you have a single-node OpenShift cluster, such as Minishift or the Red Hat Container Development Kit, link:http://appdev.openshift.io/docs/minishift-installation.html[installed and running], you can deploy your booster there.
+
+To deploy this booster to a running single-node OpenShift cluster:
+
+. Download the project and extract the archive on your local filesystem.
+
+. Log in to your OpenShift cluster:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc login -u developer -p developer
+----
+
+. Create a new OpenShift project for the booster:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc new-project MY_PROJECT_NAME
+----
+
+. Change the directory to the folder that contains the extracted booster application (for example, `my_openshift/fuse-rest-http-booster`) :
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ cd my_openshift/fuse-rest-http-booster
+----
+
+. Build and deploy the project to the OpenShift cluster:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ mvn clean -DskipTests fabric8:deploy -Popenshift
+----
+
+. In your browser, navigate to the `MY_PROJECT_NAME` project in the OpenShift console.
+Wait until you can see that the pod for the `fuse-rest-http-booster` application has started up.
+
+. On the project's `Overview` page, locate the URL for the `fuse-rest-http-booster` application. The URL uses this form:
+`http://fuse-rest-http-booster-MY_PROJECT_NAME.OPENSHIFT_IP_ADDR.nip.io`.
+
+. Click the URL to access the Greeting Service and then follow the instructions on that page.
+
+[#single-node-without-preinstalled-images]
+=== Running the booster on a single-node OpenShift cluster without preinstalled images
+To deploy your booster to a running single-node OpenShift cluster without preinstalled images:
+
+. Download the project and extract the archive on your local filesystem.
+
+. Log in to your OpenShift cluster:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc login -u developer -p developer
+----
+
+. Create a new OpenShift project for the booster:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc new-project MY_PROJECT_NAME
+----
+
+. Import base images in your newly created project (MY_PROJECT_NAME):
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ oc import-image fis-java-openshift:2.0 --from={image} --confirm
+----
+
+. Build and deploy the project to the OpenShift cluster:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ mvn clean -DskipTests fabric8:deploy -Popenshift -Dfabric8.generator.fromMode=istag -Dfabric8.generator.from=MY_PROJECT_NAME/fis-java-openshift:2.0
+----
+
+. In your browser, navigate to the `MY_PROJECT_NAME` project in the OpenShift console.
+Wait until you can see that the pod for the `fuse-rest-http-booster` application has started up.
+
+. On the project's `Overview` page, locate the URL for the `fuse-rest-http-booster` application. The URL uses this form:
+`http://fuse-rest-http-booster-MY_PROJECT_NAME.OPENSHIFT_IP_ADDR.nip.io`.
+
+. Click the URL to access the greetings service application and then follow the instructions on that page.
+
+== Running the booster on OpenShift Online
+
+To deploy this booster directly to OpenShift Online when you create the project at link:{launchURL}[].
+
+. Go to link:{launchURL}[].
+. At the *Deployment step*, select *Use OpenShift Online*.
+. Follow the on-screen instructions to create a new *REST API Level 0* project by using the *Fuse* runtime.
+
+NOTE: As part of the process of creating this booster, link:{launchURL}[] sets up a project with a CI/CD deployment of this booster. You can see the status of this deployment in your single-node OpenShift cluster or OpenShift Online web console.
+
+== Running the booster standalone on your machine
+
+To run this booster as a standalone project on your local machine:
+
+. Download the project and extract the archive on your local filesystem.
+
+. Build the project:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ cd PROJECT_DIR
+$ mvn clean package
+----
+. Run the services:
++
+[source,bash,options="nowrap",subs="attributes+"]
+----
+$ mvn spring-boot:run
+----
+. Go to link:http://localhost:8080[] and then follow the instructions on that page.

@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>REST HTTP - Red Hat Fuse</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div>
+        <h1>REST API Level 0 - Red Hat Fuse</h1>
+        <p class="lead">
+            The REST API Level 0 booster demonstrates how to map business operations to a remote procedure call endpoint over HTTP using a REST framework. This mission corresponds to Level 0 in the Richardson Maturity Model. 
+        </p>
+        <p class="lead">
+            This booster introduces the mechanics of interacting with a remote (exposed by Apache Camel) service using the HTTP protocol.
+       </p>
+        <p class="lead">
+            By using this Fuse booster, you can quickly prototype and flexibly design your REST API.
+        </p>
+        <p class="lead">
+            To demonstrate the behavior of this booster:  
+          
+            <ul class="lead">
+              <li>Click <a class="btn btn-info" href="/camel/greetings/Jacopo" target="_blank">camel/greetings/{name}</a> to execute an HTTP GET request on the <code>camel/greetings/{name}</code> endpoint.
+                <p>A new browser window opens and shows a response in JSON format with a payload of <code>Hello, $name!</code>
+                where <code>$name</code> is the value of the  <code>{name}</code> URL parameter from the HTTP GET request. By default, this is <b>Jacopo</b>.</li>
+            <li>Change the name in the URL from <b>Jacopo</b> to your name. Observe that the response reflects the name change.</li>
+        </ul>
+        </p>
+          <p class="lead">Click <a class="btn btn-info" href="/webjars/swagger-ui/index.html?url=/camel/api-doc&validatorUrl=" target="_blank">API Swagger page</a> to open the REST API's Swagger page.</p>
+    </div>
+</div>
+</body>
+</html>
