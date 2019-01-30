@@ -1,4 +1,4 @@
-package com.redhat.fuse.boosters.rest.http;
+package com.redhat.fuse.boosters.rest;
 
 import org.apache.camel.Header;
 import org.springframework.stereotype.Service;
