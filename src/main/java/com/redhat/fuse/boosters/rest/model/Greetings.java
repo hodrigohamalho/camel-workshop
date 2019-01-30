@@ -1,4 +1,4 @@
-package com.redhat.fuse.boosters.rest;
+package com.redhat.fuse.boosters.rest.model;
 
 /**
  * Greetings entity
