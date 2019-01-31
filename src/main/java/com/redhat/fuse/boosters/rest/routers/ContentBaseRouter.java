@@ -12,6 +12,7 @@ public class ContentBaseRouter extends RouteBuilder {
         from("direct:cbr")
             .log("foo")
             // start your code here...
+            // tip: .when(header("paymentMethod").isEqualTo("credit"))
         ;
         
     }

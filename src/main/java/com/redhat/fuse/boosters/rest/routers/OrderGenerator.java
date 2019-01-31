@@ -8,23 +8,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class OrderGenerator extends RouteBuilder {
 
+    
     @Override
     public void configure() throws Exception {
         
-        from("timer:generate?period=1000&repeatCount=2")
-            .log("Generating Order...")
-            .bean(OrderService.class, "generateOrder")
-            .log("Order ${body.item} generated")
-            .to("direct:sendBook");
-
-        from("direct:sendBook")
-            .choice()
-                .when(simple("${body.item} == 'Camel'"))
-                    .log("Processing Camel book")
-                    .to("mock:camel-store")
-                .when(simple("${body.item} == 'ActiveMQ'"))
-                    .log("Processing ActiveMQ book")                
-                    .to("mock:activemq-store");
+        from("timer:generate")
+            .log("Hello router!");
         
     }
 

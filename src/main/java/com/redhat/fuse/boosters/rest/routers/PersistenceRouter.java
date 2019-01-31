@@ -11,9 +11,13 @@ public class PersistenceRouter extends RouteBuilder {
 
         // Write your code here 
         // TIP: direct:getAllOrders
+        from("direct:get-all-orders")
+            .log("foo");
 
     }
 
+    
+    // Query support
     private String ds = "?dataSource=dataSource";
     private String selectAll = "sql:select * from orders" + ds;
     private String selectById = "sql:select * from orders where " +

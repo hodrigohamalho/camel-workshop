@@ -1,9 +1,10 @@
 package com.redhat.fuse.boosters.rest.routers;
 
-import com.redhat.fuse.boosters.rest.model.Greetings;
-
 import org.apache.camel.builder.RouteBuilder;
 import org.springframework.stereotype.Component;
+
+import com.redhat.fuse.boosters.rest.model.Greetings;
+import com.redhat.fuse.boosters.rest.model.Order;
 
 @Component
 public class CamelRouter extends RouteBuilder {
@@ -20,7 +21,14 @@ public class CamelRouter extends RouteBuilder {
 
             .get("/")
                 .route().routeId("get-all-orders")
-                .to("direct:getAllOrders");
+                .to("direct:get-all-orders")
+                .endRest()
+        
+            .post("/").type(Order.class).description("Create a new Order")
+            	.route().routeId("insert-order").tracing()
+            	.log("Order received")
+            	.wireTap("direct:create-order")
+				.setBody(constant("Your request was sent, thank you... Your confirmation will be sent by email."));
 
         rest("/greetings").description("Greeting to {name}")
             .get("/{name}").outType(Greetings.class)

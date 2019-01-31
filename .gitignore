@@ -28,3 +28,5 @@ target/
 .classpath
 .project
 .settings/
+
+activemq-data

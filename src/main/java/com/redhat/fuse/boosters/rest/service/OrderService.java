@@ -28,13 +28,4 @@ public class OrderService {
         return order;
     }
 
-    public Order rowToOrder(Map<String, Object> row) {
-        Order order = new Order();
-        order.setId((Integer) row.get("id"));
-        order.setItem((String) row.get("item"));
-        order.setAmount((Integer) row.get("amount"));
-        order.setDescription((String) row.get("description"));
-        order.setProcessed((Boolean) row.get("processed"));
-        return order;
-    }
 }
