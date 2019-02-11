@@ -11,12 +11,11 @@ public class MessageRouter extends RouteBuilder{
 	public void configure() throws Exception {
 
 		from("direct:create-order")
-			.log("Sending Order to AMQ broker: ${body}")
-			.to(ExchangePattern.InOnly, "activemq:queue:backend");
+			.log("Sending Order to AMQ broker: ${body}");
+			// .to(ExchangePattern.InOnly, "activemq:queue:backend");
 
-		// Place your code here...
-		from("activemq:queue:backend")
-			.log("Continue your code here...");
+		// from("activemq:queue:backend")
+			// .log("Continue your code here...");
 		
 	}
 
