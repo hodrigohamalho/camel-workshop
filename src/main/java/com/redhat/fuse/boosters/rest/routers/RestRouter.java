@@ -7,7 +7,7 @@
 // import com.redhat.fuse.boosters.rest.model.Order;
 
 // @Component
-// public class CamelRouter extends RouteBuilder {
+// public class RestRouter extends RouteBuilder {
 
 //     @Override
 //     public void configure() throws Exception {
