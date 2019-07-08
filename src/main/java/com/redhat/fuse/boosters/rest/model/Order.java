@@ -47,4 +47,8 @@ public class Order {
     public void setProcessed(boolean processed) {
         this.processed = processed;
     }
+
+    public String toString(){
+        return "id: "+this.id+", item: "+this.item+", amount: "+this.amount+", description: "+this.description;
+    }
 }

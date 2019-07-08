@@ -91,6 +91,16 @@
 			<artifactId>camel-sql-starter</artifactId>
 		</dependency>
 
+		<!-- Parser libs -->
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-jacksonxml</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-xstream</artifactId>
+		</dependency>
+
 		<!-- messaging -->
 		<dependency>
 			<groupId>org.apache.activemq</groupId>
