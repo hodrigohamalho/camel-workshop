@@ -1,5 +1,6 @@
 package com.redhat.fuse.boosters.rest.routers.lab01;
 
+import com.redhat.fuse.boosters.rest.model.Order;
 import com.redhat.fuse.boosters.rest.service.OrderService;
 
 import org.apache.camel.Exchange;
@@ -12,7 +13,7 @@ public class OrderGenerator extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
-    	
+
 		from("timer:generate?period=1000&repeatCount=5")
             .log("Generating Order...")
             .bean(OrderService.class, "generateOrder")
@@ -30,6 +31,24 @@ public class OrderGenerator extends RouteBuilder {
                     .marshal().jacksonxml()
                     .to("file:/tmp/fuse-workshop/activemq?fileName=activemq-${date:now:yyyy-MM-dd-HHmmssSSS}.xml");
 
+        from("file:/tmp/fuse-workshop/activemq?delete=true")
+            .log("uploading activemq orders to ftp")
+            .unmarshal().jacksonxml(Order.class)
+            .process(new Processor(){
+                @Override
+                public void process(Exchange exchange) throws Exception {
+                    Order order = exchange.getIn().getBody(Order.class);
+                    order.setProcessed(true);
+                    exchange.getOut().setBody(order);
+                }
+            })
+            .setHeader("CamelFileName", simple("activemq-${date:now:yyyy-MM-dd-HHmmssSSS}.xml"))
+            .marshal().jacksonxml()
+        .to("ftp://evals01@52.15.235.138?password=Password1&localWorkDirectory=/var/fuse-workshop/evals01");
+
+        from("file:/tmp/fuse-workshop/camel?delete=true")
+            .log("uploading camel orders to ftp")
+        .to("ftp://evals01@52.15.235.138?password=Password1&localWorkDirectory=/var/fuse-workshop/evals01");
     }
 
 }
