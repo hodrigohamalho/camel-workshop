@@ -1,7 +1,8 @@
 = Red Hat Fuse Workshop application
 
 This is a Red Hat Fuse (Camel) project to use with Red Hat workshop. 
-All the labs instructions https://github.com/hodrigohamalho/fuse-springboot-workshop[is here].
+
+All the labs instructions https://github.com/hodrigohamalho/fuse-springboot-workshop[are here].
 
 == Running project locally 
 
