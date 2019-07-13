@@ -1,7 +1,10 @@
 package  com.redhat.fuse.boosters.rest.model;
 
-public class Order {
+import java.io.Serializable;
 
+public class Order implements Serializable{
+
+    private static final long serialVersionUID = -1405849549831347801L;
     private int id;
     private String item;
     private int amount;

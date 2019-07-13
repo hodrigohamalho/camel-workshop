@@ -28,13 +28,26 @@ public class RestRouter extends RouteBuilder {
             .post("/").type(Order.class).description("Create a new order")
                 .route().routeId("create order")
                 .log("Order received")
+                .to(this.insertOrder)
+                .endRest()
+
+            .post("/async").type(Order.class).description("Create a new order async")
+                .route().routeId("create-order-async")
+                .log("Order received")
                 .wireTap("direct:create-order")
                 .setBody().simple("We received your request, as soon we process your request we will notify you by email.")
                 .endRest();
 
+            // Produce a message to the broker
             from("direct:create-order")
-                .log("processing order async")
-                .to(this.insertOrder);
+                .log("sending ${body.item} to JMS queue")
+                .to("activemq:queue:orders");
+
+            // Consume from the message broker queue
+            from("activemq:queue:orders")
+                .log("received ${body.item} from JMS queue")
+                .to(this.insertOrder)
+                .to("mock:notify-by-email");
  
     }
 
