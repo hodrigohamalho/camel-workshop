@@ -10,7 +10,10 @@ public class OrderProcessor implements Processor {
     @Override
     public void process(Exchange exchange) throws Exception {
         Order order = exchange.getIn().getBody(Order.class);
-        order.setProcessed(true);
+        
+        // set order process to true here
+
+        
         exchange.getOut().setBody(order);
 	}
 

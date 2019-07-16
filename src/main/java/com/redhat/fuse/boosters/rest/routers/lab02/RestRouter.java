@@ -11,7 +11,7 @@ public class RestRouter extends RouteBuilder {
     @Override
     public void configure() throws Exception {
 
-        // PUT YOUR CODE HERE
+        // insert your rest code here
  
     }
 
