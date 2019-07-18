@@ -11,7 +11,8 @@ public class OrderGenerator extends RouteBuilder {
     @Override
     public void configure() throws Exception {
 
-        // PUT YOUR CODE HERE
+        from("timer:generate")
+            .log("hello world");
 
     }
 
