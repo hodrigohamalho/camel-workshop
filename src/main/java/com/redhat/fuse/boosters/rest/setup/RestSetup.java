@@ -18,6 +18,7 @@ public class RestSetup extends RouteBuilder{
             .apiProperty("base.path", "camel/")
             .apiProperty("api.path", "/")
             .apiProperty("host", "")
+            .apiProperty("schemes", "https,http")
             .apiContextRouteId("doc-api")
         .component("servlet")
         .bindingMode(RestBindingMode.json);
