@@ -75,7 +75,7 @@
         "type": "mvn"
       },
       {
-        "commandLine": "mvn clean fabric8:deploy -f ${current.project.path}/pom.xml -P openshift -DskipTests",
+        "commandLine": "mvn clean fabric8:deploy -f ${current.project.path}/pom.xml -P openshift -DskipTests -Dspring.profiles.active=prod",
         "name": "Deploy to Openshift",
         "attributes": {
           "goal": "Deploy"
