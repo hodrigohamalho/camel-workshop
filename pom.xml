@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.redhat.integration</groupId>
 	<artifactId>fuse-workshop</artifactId>
@@ -10,7 +10,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<fuse.bom.version>7.2.0.fuse-720020-redhat-00001</fuse.bom.version>
+		<fuse.bom.version>7.4.0.fuse-sb2-740019-redhat-00005</fuse.bom.version>
 		<!-- version of Arquillian -->
 		<arquillian.cube.version>1.17.1</arquillian.cube.version>
 		<arquillian.version>1.4.0.Final</arquillian.version>
@@ -97,13 +97,17 @@
 			<artifactId>camel-xstream</artifactId>
 		</dependency>
 
-		<!-- FTP --> 
+		<!-- FTP -->
 		<dependency>
 			<groupId>org.apache.camel</groupId>
 			<artifactId>camel-ftp</artifactId>
 		</dependency>
 
 		<!-- messaging -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-activemq</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.apache.activemq</groupId>
 			<artifactId>activemq-camel</artifactId>
@@ -269,4 +273,3 @@
 		</profile>
 	</profiles>
 </project>
-
