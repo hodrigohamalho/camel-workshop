@@ -31,7 +31,10 @@
               "org.eclipse.che.ls.camel",
               "org.eclipse.che.ls.java",
               "com.redhat.bayesian.lsp"
-            ]
+            ],
+            "env": {
+              "MAVEN_OPTS": "-XX:+UseParallelGC -XX:MinHeapFreeRatio=10 -XX:MaxHeapFreeRatio=20 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xms512m -Djava.security.egd=file:/dev/./urandom"
+            }
           }
         },
         "recipe": {
