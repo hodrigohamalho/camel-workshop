@@ -10,7 +10,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<fuse.bom.version>7.4.0.fuse-sb2-740019-redhat-00005</fuse.bom.version>
+		<fuse.bom.version>7.6.0.fuse-sb2-760028-redhat-00001</fuse.bom.version>
 		<!-- version of Arquillian -->
 		<arquillian.cube.version>1.17.1</arquillian.cube.version>
 		<arquillian.version>1.4.0.Final</arquillian.version>
@@ -97,13 +97,14 @@
 			<artifactId>camel-xstream</artifactId>
 		</dependency>
 
-		<!-- FTP -->
+		<!-- FTP
 		<dependency>
 			<groupId>org.apache.camel</groupId>
 			<artifactId>camel-ftp</artifactId>
 		</dependency>
+		-->
 
-		<!-- messaging -->
+		<!-- messaging
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-activemq</artifactId>
@@ -121,8 +122,9 @@
 			<groupId>org.apache.activemq</groupId>
 			<artifactId>activemq-kahadb-store</artifactId>
 		</dependency>
+		 -->
 
-		<!-- database -->
+		<!-- database
 		<dependency>
 			<groupId>org.apache.camel</groupId>
 			<artifactId>camel-sql-starter</artifactId>
@@ -137,8 +139,9 @@
 			<artifactId>hsqldb</artifactId>
 			<scope>runtime</scope>
 		</dependency>
+		-->
 
-		<!-- Test -->
+		<!-- Test 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -175,6 +178,7 @@
 			<groupId>io.fabric8</groupId>
 			<artifactId>openshift-client</artifactId>
 		</dependency>
+		-->
 	</dependencies>
 	<build>
 		<plugins>
