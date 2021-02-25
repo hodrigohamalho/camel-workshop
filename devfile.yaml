@@ -14,11 +14,6 @@ components:
     id: redhat/vscode-apache-camel/latest
     type: chePlugin
     alias: vscode-camel
-  - 
-    type: chePlugin
-    reference: >-
-      https://raw.githubusercontent.com/apupier/camelk-on-che-with-java-support-example/master/.che/camelk-plugin-meta.yaml
-    alias: vscode-camelk
   -
     type: dockerimage
     alias: tools
