@@ -9,14 +9,11 @@ projects:
       type: git
       location: "https://github.com/hodrigohamalho/fuse-workshop.git"
 components:
-  -
-    type: chePlugin
-    id: redhat/java/latest
-    preferences:
-      java.server.launchMode: Standard
   - 
+    type: chePlugin
     id: redhat/vscode-apache-camel/latest
     type: chePlugin
+    alias: vscode-camel
   - 
     type: chePlugin
     reference: >-
