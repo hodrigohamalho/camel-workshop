@@ -12,7 +12,11 @@
             },
             "servers": {
               "springboot": {
+                "internal": false,
                 "port": "8080",
+                "unique": false,
+                "secure": false,
+                "discoverable": false,
                 "protocol": "http"
               }
             },
@@ -47,6 +51,10 @@
       {
         "name": "fuse-workshop",
         "type": "maven",
+        "source": {
+          "location": "https://github.com/hodrigohamalho/fuse-workshop",
+          "type": "git"
+        },
         "path": "/fuse-workshop"
       }
     ],
@@ -87,6 +95,7 @@
       }
     ]
   },
+  "id": "fuse-workshop",
   "creator": {
     "name": "Eric Deandrea",
     "email": "edeandrea@redhat.com"
