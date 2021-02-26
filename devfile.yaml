@@ -15,7 +15,7 @@ components:
     alias: vscode-camel
   - 
     type: chePlugin
-    id: redhat/vscode-openshift-tools/latest
+    id: redhat/vscode-openshift-tools/v0.2.0
     alias: vscode-openshift
   -
     type: dockerimage
