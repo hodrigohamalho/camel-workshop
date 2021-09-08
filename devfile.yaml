@@ -7,7 +7,7 @@ projects:
     name: fuse-workshop
     source:
       type: git
-      location: "https://github.com/hodrigohamalho/fuse-workshop.git"
+      location: "https://github.com/GuilhermeCamposo/fuse-workshop.git"
 components:
   -
     type: chePlugin

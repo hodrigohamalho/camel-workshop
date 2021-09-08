@@ -52,7 +52,7 @@
         "name": "fuse-workshop",
         "type": "maven",
         "source": {
-          "location": "https://github.com/hodrigohamalho/fuse-workshop",
+          "location": "https://github.com/GuilhermeCamposo/fuse-workshop",
           "type": "git"
         },
         "path": "/fuse-workshop"
