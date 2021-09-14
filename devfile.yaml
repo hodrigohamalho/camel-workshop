@@ -1,6 +1,6 @@
 apiVersion: 1.0.0
 metadata:
-  generateName: fuse-workshop-
+  name: fuse-workshop
 components:
   - type: chePlugin
     id: redhat/vscode-apache-camel/latest
