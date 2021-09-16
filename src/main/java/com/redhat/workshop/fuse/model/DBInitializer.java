@@ -1,4 +1,4 @@
-package com.redhat.fuse.boosters.rest.model;
+package com.redhat.workshop.fuse.model;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

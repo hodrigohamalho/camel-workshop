@@ -1,10 +1,8 @@
-package com.redhat.fuse.boosters.rest.routers;
+package com.redhat.workshop.fuse.routers;
 
 import org.apache.camel.builder.RouteBuilder;
 
 import org.springframework.stereotype.Component;
-
-import com.redhat.fuse.boosters.rest.service.OrderService;
 
 @Component
 public class OrderGenerator extends RouteBuilder {
