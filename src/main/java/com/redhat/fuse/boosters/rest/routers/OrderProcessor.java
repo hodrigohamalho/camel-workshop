@@ -1,4 +1,4 @@
-package com.redhat.fuse.boosters.rest.routers.lab01;
+package com.redhat.fuse.boosters.rest.routers;
 
 import com.redhat.fuse.boosters.rest.model.Order;
 

@@ -1,4 +1,4 @@
-package com.redhat.fuse.boosters.rest.routers.lab02;
+package com.redhat.fuse.boosters.rest.routers;
 
 import org.apache.camel.builder.RouteBuilder;
 import org.springframework.stereotype.Component;
