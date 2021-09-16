@@ -30,7 +30,7 @@ public class DBInitializer {
              try {
                  Connection conn = DriverManager.getConnection(dbURL, user, password);
                  Statement stmt = conn.createStatement();
-                 String sql = "drop table if exists orders; create table orders (id INTEGER IDENTITY PRIMARY KEY, item varchar(100),amount integer, description varchar(100), processed boolean);";
+                 String sql = "CREATE TABLE IF NOT EXISTS orders (id INT PRIMARY KEY AUTO_INCREMENT, item VARCHAR(100), amount INTEGER, description VARCHAR(100), processed BOOLEAN);";
                  stmt.executeUpdate(sql);
                  System.out.println("Created table in given database...");
              } catch (SQLException e) {
