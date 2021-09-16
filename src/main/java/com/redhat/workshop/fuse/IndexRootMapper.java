@@ -1,4 +1,4 @@
-package com.redhat.fuse.boosters.rest;
+package com.redhat.workshop.fuse;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
