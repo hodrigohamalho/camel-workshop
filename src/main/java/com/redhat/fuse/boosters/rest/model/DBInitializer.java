@@ -1,6 +1,8 @@
 package com.redhat.fuse.boosters.rest.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -15,18 +17,19 @@ public class DBInitializer {
     @Value("${app.external-db}")
     Boolean externalDb;
 
-    @Value("${spring.datasource.url}")
-    String dbURL;
+    @Autowired
+    private Environment env;
 
-    @Value("${spring.datasource.username}")
-    String user;
 
-    @Value("${spring.datasource.password}")
-    String password;
 
     @PostConstruct
     public void init(){
          if(externalDb){
+
+             String dbURL = env.getProperty("spring.datasource.url");
+             String user = env.getProperty("spring.datasource.username");
+             String password = env.getProperty("spring.datasource.password");
+
              try {
                  Connection conn = DriverManager.getConnection(dbURL, user, password);
                  Statement stmt = conn.createStatement();
