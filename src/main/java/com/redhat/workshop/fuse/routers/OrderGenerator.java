@@ -10,7 +10,7 @@ public class OrderGenerator extends RouteBuilder {
     @Override
     public void configure() throws Exception {
 
-        from("timer:generate?repeatCount=1")
+        from("timer:generate")
             .log("hello router!");
 
     }
