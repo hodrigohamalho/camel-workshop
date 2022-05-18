@@ -1,104 +1,29 @@
 spec:
-  strategy:
-    type: Rolling
-    rollingParams:
-      updatePeriodSeconds: 1
-      intervalSeconds: 1
-      timeoutSeconds: 3600
-      maxUnavailable: 25%
-      maxSurge: 25%
-    resources: {}
-    activeDeadlineSeconds: 21600
-  triggers:
-    - type: ImageChange
-      imageChangeParams:
-        containerNames:
-          - spring-boot
-        from:
-          kind: ImageStreamTag
-          namespace: user1-project
-          name: 'fuse-workshop:latest'
-    - type: ConfigChange
-  replicas: 1
-  revisionHistoryLimit: 2
-  test: false
-  selector:
-    app: fuse-workshop
-    group: com.redhat.workshop
-    provider: fabric8
   template:
-    metadata:
-      creationTimestamp: null
-      labels:
-        app: fuse-workshop
-        rht.comp_ver: 0.0.1-SNAPSHOT
-        rht.prod_name: Red_Hat_Integration
-        rht.prod_ver: '7.8'
-        com.company: Red_Hat
-        provider: fabric8
-        version: 0.0.1-SNAPSHOT
-        rht.comp: fuse-workshop
-        group: com.redhat.workshop
-      annotations:
-        fabric8.io/git-branch: artemis
-        fabric8.io/git-commit: 48f14648ec0cf3ae70eadca1e918e10825ed0fa6
-        fabric8.io/git-url: 'https://github.com/GuilhermeCamposo/fuse-workshop.git'
     spec:
       containers:
-        - resources:
-            limits:
-              cpu: '1'
-              memory: 512Mi
-            requests:
-              cpu: 200m
-              memory: 512Mi
-          readinessProbe:
-            httpGet:
-              path: /actuator/health
-              port: 8080
-              scheme: HTTP
-            timeoutSeconds: 1
-            periodSeconds: 10
-            successThreshold: 1
-            failureThreshold: 3
-          terminationMessagePath: /dev/termination-log
-          name: spring-boot
+        -
+          resources:
+           requests:
+             cpu: "0.2"
+             memory: 512Mi
+           limits:
+             cpu: "1.0"
+             memory: 512Mi
+          env:
+          - name: SPRING_APPLICATION_JSON
+            value: '{"server":{"undertow":{"io-threads":1, "worker-threads":2 }}}'
+          - name: SPRING_PROFILES_ACTIVE
+            value: prod
+          - name: SPRING_PROFILES_ACTIVE
+            value: prod
           livenessProbe:
             httpGet:
               path: /actuator/health
               port: 8080
               scheme: HTTP
-            initialDelaySeconds: 180
-            timeoutSeconds: 1
-            periodSeconds: 10
-            successThreshold: 1
-            failureThreshold: 3
-          env:
-            - name: SPRING_APPLICATION_JSON
-              value: '{"server":{"undertow":{"io-threads":1, "worker-threads":2 }}}'
-            - name: SPRING_PROFILES_ACTIVE
-              value: prod
-            - name: KUBERNETES_NAMESPACE
-              valueFrom:
-                fieldRef:
-                  apiVersion: v1
-                  fieldPath: metadata.namespace
-          securityContext:
-            privileged: false
-          ports:
-            - name: http
-              containerPort: 8080
-              protocol: TCP
-            - name: prometheus
-              containerPort: 9779
-              protocol: TCP
-            - name: jolokia
-              containerPort: 8778
-              protocol: TCP
-          imagePullPolicy: IfNotPresent
-          terminationMessagePolicy: File
-      restartPolicy: Always
-      terminationGracePeriodSeconds: 30
-      dnsPolicy: ClusterFirst
-      securityContext: {}
-      schedulerName: default-scheduler
+          readinessProbe:
+            httpGet:
+              path: /actuator/health
+              port: 8080
+              scheme: HTTP
