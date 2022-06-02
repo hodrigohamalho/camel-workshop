@@ -2,7 +2,7 @@
 
 This is a Red Hat Fuse (Camel) project to use with Red Hat workshop. 
 
-All the labs instructions https://github.com/GuilhermeCamposo/fuse-workshop-doc[are here].
+All the labs instructions https://github.com/GuilhermeCamposo/workshop_camel-springboot/tree/main/walkthrough[are here].
 
 == Running project locally 
 
