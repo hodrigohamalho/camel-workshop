@@ -1,4 +1,4 @@
-package com.redhat.fuse.boosters.rest;
+package com.redhat.workshop.fuse;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

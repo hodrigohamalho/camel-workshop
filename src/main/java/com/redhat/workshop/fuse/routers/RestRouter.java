@@ -1,9 +1,9 @@
-package com.redhat.fuse.boosters.rest.routers.lab02;
+package com.redhat.workshop.fuse.routers;
 
 import org.apache.camel.builder.RouteBuilder;
 import org.springframework.stereotype.Component;
 
-import com.redhat.fuse.boosters.rest.model.Order;
+import com.redhat.workshop.fuse.model.Order;
 
 @Component
 public class RestRouter extends RouteBuilder {
@@ -12,7 +12,7 @@ public class RestRouter extends RouteBuilder {
     public void configure() throws Exception {
 
         // insert your rest code here
- 
+
     }
 
     // Query support

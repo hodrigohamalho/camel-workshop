@@ -1,10 +1,9 @@
-package com.redhat.fuse.boosters.rest.service;
+package com.redhat.workshop.fuse.service;
 
-import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import com.redhat.fuse.boosters.rest.model.Order;
+import com.redhat.workshop.fuse.model.Order;
 
 import org.springframework.stereotype.Component;
 

@@ -1,13 +1,13 @@
-package com.redhat.fuse.boosters.rest;
+package com.redhat.workshop.fuse;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 @ComponentScan
-public class IndexRootMapper extends WebMvcConfigurerAdapter {
+public class IndexRootMapper implements WebMvcConfigurer {
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {

@@ -1,4 +1,4 @@
-package com.redhat.fuse.boosters.rest.setup;
+package com.redhat.workshop.fuse.setup;
 
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.model.rest.RestBindingMode;
