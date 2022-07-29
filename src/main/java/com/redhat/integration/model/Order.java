@@ -1,4 +1,4 @@
-package com.redhat.workshop.fuse.model;
+package com.redhat.integration.model;
 
 import java.io.Serializable;
 

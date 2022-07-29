@@ -1,10 +1,11 @@
-package com.redhat.workshop.fuse.routers;
+package com.redhat.integration.routers;
 
-import com.redhat.workshop.fuse.model.Order;
+import javax.enterprise.context.ApplicationScoped;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
 
+@ApplicationScoped
 public class OrderProcessor implements Processor {
 
     @Override

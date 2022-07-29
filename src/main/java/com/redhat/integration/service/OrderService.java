@@ -1,13 +1,13 @@
-package com.redhat.workshop.fuse.service;
+package com.redhat.integration.service;
 
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import com.redhat.workshop.fuse.model.Order;
+import javax.enterprise.context.ApplicationScoped;
 
-import org.springframework.stereotype.Component;
+import com.redhat.integration.model.Order;
 
-@Component
+@ApplicationScoped
 public class OrderService {
 
     private final AtomicInteger counter = new AtomicInteger();
