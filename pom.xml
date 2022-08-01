@@ -48,7 +48,7 @@
     <dependency>
 	    <groupId>org.apache.camel.quarkus</groupId>
 	    <artifactId>camel-quarkus-rest</artifactId>
-	</dependency>
+	  </dependency>
    
     <dependency>
       <groupId>org.apache.camel.quarkus</groupId>
@@ -63,17 +63,17 @@
     <dependency>
 	    <groupId>org.apache.camel.quarkus</groupId>
 	    <artifactId>camel-quarkus-openapi-java</artifactId>
-	</dependency>
-	<dependency>
+	  </dependency>
+	  <dependency>
 	    <groupId>org.apache.camel.quarkus</groupId>
 	    <artifactId>camel-quarkus-rest-openapi</artifactId>
-	</dependency>
+	  </dependency>
     
     <!-- Camel Quarkus Direct dependencies -->
     <dependency>
-	    <groupId>org.apache.camel.quarkus</groupId>
-	    <artifactId>camel-quarkus-direct</artifactId>
-	</dependency>
+      <groupId>org.apache.camel.quarkus</groupId>
+      <artifactId>camel-quarkus-direct</artifactId>
+	  </dependency>
     
     <!-- Camel File dependencies -->
     <dependency>
@@ -112,24 +112,24 @@
 	    <artifactId>camel-quarkus-bean</artifactId>
 	</dependency>
 	
-    <dependency>
-      <groupId>io.quarkus</groupId>
-      <artifactId>quarkus-arc</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>io.quarkus</groupId>
-      <artifactId>quarkus-resteasy</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>io.quarkus</groupId>
-      <artifactId>quarkus-junit5</artifactId>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.rest-assured</groupId>
-      <artifactId>rest-assured</artifactId>
-      <scope>test</scope>
-    </dependency>
+  <dependency>
+    <groupId>io.quarkus</groupId>
+    <artifactId>quarkus-arc</artifactId>
+  </dependency>
+  <dependency>
+    <groupId>io.quarkus</groupId>
+    <artifactId>quarkus-resteasy</artifactId>
+  </dependency>
+  <dependency>
+    <groupId>io.quarkus</groupId>
+    <artifactId>quarkus-junit5</artifactId>
+    <scope>test</scope>
+  </dependency>
+  <dependency>
+    <groupId>io.rest-assured</groupId>
+    <artifactId>rest-assured</artifactId>
+    <scope>test</scope>
+  </dependency>
     
 
   </dependencies>
