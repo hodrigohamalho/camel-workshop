@@ -22,6 +22,6 @@ The application can be packaged using:
 
 == Running the application in Openshift
 
-mvn clean package -Dopenshift
+    mvn clean package -Dopenshift
 
 There is some properties related to Openshift deployment in the `application-prod.properties` file
