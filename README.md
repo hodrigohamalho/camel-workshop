@@ -1,8 +1,8 @@
-= Red Hat Camel 3 Workshop application
+# Red Hat Camel 3 Workshop application
 
-This is a Red Hat Camel 3 project (with Quarkus framework) to use with Red Hat workshop. 
+This is a Red Hat Camel 3 with Quarkus project (aka Camel Extensions for Quarkus) that is used in the Camel 101 Workshop
 
-All the labs instructions https://github.com/GuilhermeCamposo/workshop_camel-springboot/tree/main/walkthroughs[are here].
+All the labs instructions https://github.com/hodrigohamalho/workshop_camel-springboot/tree/main/walkthroughs[are here].
 
 
 ## Running the application in dev mode
