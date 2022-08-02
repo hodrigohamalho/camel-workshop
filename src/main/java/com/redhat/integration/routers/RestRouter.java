@@ -18,7 +18,7 @@ public void configure() throws Exception {
         .apiProperty("api.title", "Orders REST API")
         .apiProperty("api.version", "1.0")
         .apiProperty("cors", "true")
-        .apiProperty("base.path", "camel/")
+        .apiProperty("base.path", "/")
         .apiProperty("api.path", "/")
         .apiProperty("host", "")
         .apiProperty("schemes", "https,http")
