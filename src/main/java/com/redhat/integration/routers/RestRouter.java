@@ -25,7 +25,7 @@ public void configure() throws Exception {
         .apiContextRouteId("doc-api")
     .bindingMode(RestBindingMode.json);
 
-        // insert your rest code here
+    // insert your rest code here
     	
     	
     }
