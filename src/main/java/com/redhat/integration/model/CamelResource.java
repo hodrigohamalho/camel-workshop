@@ -39,8 +39,8 @@ public class CamelResource {
                 		+ "processed boolean, "
                 		+ "PRIMARY KEY (id)"
                 		+ ")");
-                statement.execute("INSERT INTO orders values(0, 'Ansible', 10, 'ansible product', true)");
-                statement.execute("INSERT INTO orders values(1, 'Openshift', 10, 'Openshift product', true)");
+                statement.execute("INSERT INTO orders values('Ansible', 10, 'ansible product', true)");
+                statement.execute("INSERT INTO orders values('Openshift', 10, 'Openshift product', true)");
             }
         }
     }

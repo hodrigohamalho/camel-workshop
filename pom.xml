@@ -117,6 +117,12 @@
 	    <artifactId>camel-quarkus-bean</artifactId>
 	</dependency>
 	
+	<!-- Camel Mock dependencies -->
+	<dependency>
+	    <groupId>org.apache.camel.quarkus</groupId>
+	    <artifactId>camel-quarkus-mock</artifactId>
+	</dependency>
+	
   <dependency>
     <groupId>io.quarkus</groupId>
     <artifactId>quarkus-arc</artifactId>
