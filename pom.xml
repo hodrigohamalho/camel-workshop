@@ -79,70 +79,66 @@
     <dependency>
 	    <groupId>org.apache.camel.quarkus</groupId>
 	    <artifactId>camel-quarkus-file</artifactId>
-	</dependency>
+	  </dependency>
     
     <!-- Camel SQL -->
     <dependency>
 	    <groupId>org.apache.camel.quarkus</groupId>
 	    <artifactId>camel-quarkus-sql</artifactId>
-	</dependency>
+	  </dependency>
     
     <!-- JDBC driver dependencies -->
-	<dependency>
-	    <groupId>io.quarkus</groupId>
-	    <artifactId>quarkus-jdbc-mysql</artifactId>
-	</dependency>
-	
-	<dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-jdbc-mysql</artifactId>
+    </dependency>
+	  <dependency>
 	    <groupId>io.quarkus</groupId>
 	    <artifactId>quarkus-jdbc-h2</artifactId>
-	</dependency>
+	  </dependency>
 	
-	<!-- Camel JMS dependencies -->
-	
-	<dependency>
+    <!-- ActiveMQ Artemis -->
+    <dependency>
       <groupId>org.apache.camel.quarkus</groupId>
       <artifactId>camel-quarkus-amqp</artifactId>
     </dependency>
-	
-	<!-- Camel Timer dependencies -->
-	<dependency>
-	    <groupId>org.apache.camel.quarkus</groupId>
-	    <artifactId>camel-quarkus-timer</artifactId>
-	</dependency>
+
+    <!-- Camel Timer dependencies -->
+    <dependency>
+      <groupId>org.apache.camel.quarkus</groupId>
+      <artifactId>camel-quarkus-timer</artifactId>
+    </dependency>
 	
 	<!-- Camel Bean dependencies -->
-	<dependency>
-	    <groupId>org.apache.camel.quarkus</groupId>
-	    <artifactId>camel-quarkus-bean</artifactId>
-	</dependency>
+    <dependency>
+      <groupId>org.apache.camel.quarkus</groupId>
+      <artifactId>camel-quarkus-bean</artifactId>
+    </dependency>
 	
 	<!-- Camel Mock dependencies -->
-	<dependency>
+	  <dependency>
 	    <groupId>org.apache.camel.quarkus</groupId>
 	    <artifactId>camel-quarkus-mock</artifactId>
-	</dependency>
+	  </dependency>
 	
-  <dependency>
-    <groupId>io.quarkus</groupId>
-    <artifactId>quarkus-arc</artifactId>
-  </dependency>
-  <dependency>
-    <groupId>io.quarkus</groupId>
-    <artifactId>quarkus-resteasy</artifactId>
-  </dependency>
-  <dependency>
-    <groupId>io.quarkus</groupId>
-    <artifactId>quarkus-junit5</artifactId>
-    <scope>test</scope>
-  </dependency>
-  <dependency>
-    <groupId>io.rest-assured</groupId>
-    <artifactId>rest-assured</artifactId>
-    <scope>test</scope>
-  </dependency>
-    
-
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-arc</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-resteasy</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-junit5</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>io.rest-assured</groupId>
+      <artifactId>rest-assured</artifactId>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
   
   <repositories>
