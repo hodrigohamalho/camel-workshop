@@ -7,7 +7,10 @@ import javax.enterprise.context.ApplicationScoped;
 
 import com.redhat.integration.model.Order;
 
+import io.quarkus.arc.Unremovable;
+
 @ApplicationScoped
+@Unremovable
 public class OrderService {
 
     private final AtomicInteger counter = new AtomicInteger();
