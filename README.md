@@ -1,4 +1,4 @@
-= Red Hat Camel 3 Workshop application
+# Red Hat Camel 3 Workshop application
 
 This is a Red Hat Camel 3 project (with Quarkus framework) to use with Red Hat workshop. 
 
